@@ -4,6 +4,7 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $CURRENT_DIR/scripts/local_temp.sh
 
 TEMP="$( curl -s http://192.168.1.229:3005 | jq .tmp)"
+echo $TEMP
 
 do_interpolation() {
 	local string="$1"
