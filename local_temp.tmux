@@ -6,11 +6,9 @@ temp_interpolation_string="\#{local_temp}"
 source "$CURRENT_DIR/scripts/local_temp.sh"
 
 TEMP="$( curl -s http://192.168.1.229:3005 | jq .tmp)"
-echo "$TEMP"
 
 do_interpolation() {
 	local string="$1"
-  echo $
 	local interpolated="${string/$temp_interpolation_string/$TEMP}"
 	echo "$interpolated"
 }
