@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source $CURRENT_DIR/scripts/local_temp.sh
@@ -31,8 +32,8 @@ interpolate() {
 
 
 temp() {
-  interpolate "status-right"
-  interpolate "status-left"
+  update_tmux_option "status-right"
+  update_tmux_option "status-left"
 }
 
 temp
