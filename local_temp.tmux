@@ -3,15 +3,15 @@
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 temp_interpolation_string="\#{local_temp}"
 
-source $CURRENT_DIR/scripts/local_temp.sh
+source "$CURRENT_DIR/scripts/local_temp.sh"
 
 TEMP="$( curl -s http://192.168.1.229:3005 | jq .tmp)"
-echo $TEMP
+echo "$TEMP"
 
 do_interpolation() {
 	local string="$1"
-  echo $string
-	local interpolated="${string/temp_interpolation_string/$TEMP}"
+  echo $
+	local interpolated="${string/$temp_interpolation_string/$TEMP}"
 	echo "$interpolated"
 }
 
